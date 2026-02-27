@@ -97,7 +97,7 @@ const projects = [
 ];
 
 // keep blank until you add your resume
-const resumeLink = "";
+const resumeLink = "https://drive.google.com/file/d/1eHa7bNLm8fhHuQrVSr4pukcsc8ttBbDz/view?usp=drive_link";
 
 /* ============================================================= */
 
@@ -352,13 +352,16 @@ function Projects({ filter, setFilter, filteredProjects }) {
 /* ================= RESUME ================= */
 
 function Resume() {
+  if (!resumeLink) return null;
+
   return (
     <Section id="resume" title="Resume">
       <div className="text-center">
         <a
           href={resumeLink}
           target="_blank"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-cyan-500 text-white"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-cyan-500 text-white hover:scale-105 transition"
         >
           <FileText size={18} /> View Resume
         </a>
